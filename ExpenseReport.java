@@ -4,7 +4,7 @@ import java.util.Date;
 import java.util.List;
 
 enum ExpenseType {
-    DINNER, BREAKFAST, CAR_RENTAL
+    DINNER, BREAKFAST, CAR_RENTAL, LUNCH
 }
 
 class Expense {
@@ -35,9 +35,12 @@ public class ExpenseReport {
             case CAR_RENTAL:
                 expenseName = "Car Rental";
                 break;
+            case LUNCH:
+                expenseName="Lunch";
+                break;
             }
 
-            String mealOverExpensesMarker = expense.type == ExpenseType.DINNER && expense.amount > 5000 || expense.type == ExpenseType.BREAKFAST && expense.amount > 1000 ? "X" : " ";
+            String mealOverExpensesMarker = expense.type == ExpenseType.DINNER && expense.amount > 5000 || expense.type == ExpenseType.BREAKFAST && expense.amount > 1000 ? "X" : expense.type == ExpenseType.LUNCH && expense.amount > 2000 ? "X" : "Under Limit";
 
             System.out.println(expenseName + "\t" + expense.amount + "\t" + mealOverExpensesMarker);
 
