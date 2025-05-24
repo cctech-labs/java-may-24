@@ -20,7 +20,7 @@ public class ExpenseReport {
         System.out.println("Expenses " + new Date());
 
         for (Expense expense : expenses) {
-            if (expense.type == ExpenseType.DINNER || expense.type == ExpenseType.BREAKFAST) {
+            if (expense.type == ExpenseType.DINNER || expense.type == ExpenseType.BREAKFAST || expense.type == ExpenseType.LUNCH) {
                 mealExpenses += expense.amount;
             }
 
