@@ -62,5 +62,7 @@ public class ExpenseReport {
         expenses.add(ExpenseType.DINNER, 1000, 5000);
         expenses.add(ExpenseType.BREAKFAST, 2000, 1000);
         expenses.add(ExpenseType.LUNCH, 2000, 1000); // setting the rate limit of lunch to 1000;
+        expenses.add(ExpenseType.CAR_RENTAL, 2000, 3000);
+        printReport(expenses);
     }
 }
